@@ -98,17 +98,14 @@ function uniquifyArray(arr) {
 console.log(uniquifyArray(wordsUnique));
 
 // Iteration #6: Find elements
-const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+const wordsFind = ['machine', 'sunset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
 function doesWordExist(arraySearch, wordSearch) {
 
-  if (arraySearch.includes(wordSearch)) {
-    return true;
-  } else {
-    return false;
-  }
+  if (arraySearch.includes(wordSearch)) 
+ return 'Word exists'
 }
-console.log (doesWordExist('machine'))
+console.log (doesWordExist(wordsFind, 'sunset'));
 
 // Iteration #7: Count repetition
 const wordsCount = [
