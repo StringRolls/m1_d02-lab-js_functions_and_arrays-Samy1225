@@ -26,11 +26,11 @@ console.log(findLongestWord(words));
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers(numbers) {
+function sumNumbers(num) {
   let total = 0;
 
-  for (let i = 0; i < numbers.length; i++) {
-    total = total + numbers[i];
+  for (let i = 0; i < num.length; i++) {
+    total = total + num[i];
   }
   return total;
 }
@@ -44,6 +44,7 @@ function sum() {}
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
 function averageNumbers(numbers) {
+  if (numbers.length === 0) return null;
   let average = sumNumbers(numbers) / numbers.length;
 
   return average;
@@ -87,11 +88,9 @@ const wordsUnique = [
 function uniquifyArray(arr) {
   let newArray = [];
   for (let i = 0; i < arr.length; i++) {
-    if (newArray.indexOf(arr[1] === -1)) {
+    if (newArray.indexOf(arr[i]) === -1) {
       newArray.push(arr[i]);
-    } else {
-      newArray = newArray;
-    }
+    } else newArray = newArray;
   }
   return newArray;
 }
@@ -101,11 +100,14 @@ console.log(uniquifyArray(wordsUnique));
 const wordsFind = ['machine', 'sunset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
 function doesWordExist(arraySearch, wordSearch) {
+  if (wordSearch === '') return 'There is no word';
 
-  if (arraySearch.includes(wordSearch)) 
- return 'Word exists'
+  if (arraySearch.includes(wordSearch)) {
+    return 'Word exists';
+  } else return 'Word doesn`t exist';
 }
-console.log (doesWordExist(wordsFind, 'sunset'));
+
+console.log(doesWordExist(wordsFind, 'sunset'));
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -122,7 +124,19 @@ const wordsCount = [
   'matter'
 ];
 
-function howManyTimes() {}
+function howManyTimes(arrWords, wordToSearch) {
+  let count = 0;
+  if (arrWords.length === 0) return 0;
+
+  arrWords.forEach((element) => {
+    if (element === wordToSearch) {
+      count += 1
+    };
+  });
+  
+  return count
+} 
+console.log(howManyTimes(wordsCount,'matter'))
 
 // Iteration #8: Bonus
 const matrix = [
@@ -151,7 +165,7 @@ const matrix = [
 function greatestProduct() {}
 
 // The following is required to make unit tests work.
-/* Environment setup. Do not modify the below code. */
+// Environment setup. Do not modify the below code.
 if (typeof module !== 'undefined') {
   module.exports = {
     maxOfTwoNumbers,
