@@ -107,7 +107,7 @@ function doesWordExist(arraySearch, wordSearch) {
   } else return 'Word doesn`t exist';
 }
 
-console.log(doesWordExist(wordsFind, 'sunset'));
+console.log(doesWordExist(wordsFind, 'machine'));
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -130,13 +130,13 @@ function howManyTimes(arrWords, wordToSearch) {
 
   arrWords.forEach((element) => {
     if (element === wordToSearch) {
-      count += 1
-    };
+      count += 1;
+    }
   });
-  
-  return count
-} 
-console.log(howManyTimes(wordsCount,'matter'))
+
+  return count;
+}
+console.log(howManyTimes(wordsCount, 'matter'));
 
 // Iteration #8: Bonus
 const matrix = [
