@@ -21,14 +21,14 @@ const words = [
   "crackpot",
 ];
 
-function findLongestWord(words) {
-  if (words.length === 0) return null;
+function findLongestWord(arr) {
+  if (arr.length === 0) return null;
 
   let longestWord = "";
 
-  for (let i = 0; i < words.length; i++) {
-    if (longestWord.length < words[i].length) {
-      longestWord = words[i];
+  for (let i = 0; i < arr.length; i++) {
+    if (longestWord.length < arr[i].length) {
+      longestWord = arr[i];
     }
   }
   return longestWord;
